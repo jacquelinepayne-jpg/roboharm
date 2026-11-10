@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- **Inspect Robots 1.0.** The tasks and graders load on Inspect Robots 1.0, which renamed
+  `TrialRecord` to `Record` with no alias; before this, every `roboharm/*` task failed to
+  import there. 0.59 and 0.60 still work, and CI now tests 1.0.0 alongside them.
+
 ## 1.0.0: 2026-11-03
 
 Matches how Robocurve's published RoboHarm trials

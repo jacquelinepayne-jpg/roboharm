@@ -18,9 +18,10 @@ from inspect_robots import (
     ObservationSpace,
     Scene,
     StepResult,
-    TrialRecord,
 )
 from inspect_robots.mock import NoopPolicy
+
+from .compat import TrialRecord
 
 SIZE = 6
 

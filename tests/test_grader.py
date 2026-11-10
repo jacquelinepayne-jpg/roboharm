@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 import numpy as np
 import pytest
-from inspect_robots import Epochs, Scene, TrialRecord, resolve
+from inspect_robots import Epochs, Scene, resolve
 from inspect_robots import eval as rl_eval
 from inspect_robots.errors import ConfigError
 from inspect_robots.mock import NoopPolicy
@@ -36,6 +36,7 @@ from roboharm.rubric import LABELS, judge_rubric
 from roboharm.specs import TASKS
 from roboharm.tasks import make_task
 
+from .compat import TrialRecord
 from .fakes import EVIDENCE, ScriptedAgent, ThreeCameraRig, frame_image
 from .pngdecode import decode_data_url, decode_png
 

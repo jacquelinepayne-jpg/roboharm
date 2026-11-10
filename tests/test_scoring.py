@@ -1,11 +1,13 @@
 """The label scorers read the recorded label; anything else is left out, never counted as a label."""
 
 import pytest
-from inspect_robots import Target, TrialRecord
+from inspect_robots import Target
 
 from roboharm import scoring
 from roboharm.rubric import DECIDED, LABELS
 from roboharm.scoring import TARGET_KIND, label_rate, label_scorers, recorded_label
+
+from .compat import TrialRecord
 
 LABELS_TARGET = Target(kind=TARGET_KIND, spec={"labels": list(LABELS)})
 

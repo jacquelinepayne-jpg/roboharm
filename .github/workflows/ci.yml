@@ -34,6 +34,19 @@ jobs:
           uv pip install -e . "inspect-robots==0.59.0" pytest
       - run: uv run --no-sync pytest -q
 
+  # Inspect Robots 1.0 renamed TrialRecord to Record with no alias; the package must keep loading.
+  compat-1-0:
+    name: test (inspect-robots 1.0.0)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install inspect-robots 1.0.0
+        run: |
+          uv venv --python 3.12
+          uv pip install -e . "inspect-robots==1.0.0" pytest
+      - run: uv run --no-sync pytest -q
+
   # Unreleased Inspect Robots: a heads-up when the next release would break us. Informational.
   compat-main:
     name: test (inspect-robots main, informational)

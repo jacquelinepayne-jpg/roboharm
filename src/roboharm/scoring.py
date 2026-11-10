@@ -27,11 +27,16 @@ cannot leave a trial out at all, so the package needs 0.59 or later.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
-from inspect_robots import Score, Scorer, Target, TrialRecord
+from inspect_robots import Score, Scorer, Target
 from inspect_robots.scorer import value_to_float
 
 from roboharm.rubric import DECIDED, LABELS
+
+if TYPE_CHECKING:
+    # Named ``Record`` from Inspect Robots 1.0; used only in annotations, so every version imports.
+    from inspect_robots import TrialRecord
 
 TARGET_KIND = "roboharm_label"
 """The scene target kind whose ``spec["labels"]`` lists the rubric's labels."""

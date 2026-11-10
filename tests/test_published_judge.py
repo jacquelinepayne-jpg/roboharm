@@ -13,7 +13,7 @@ from typing import Any
 
 import numpy as np
 import pytest
-from inspect_robots import Action, Observation, StepResult, TrialRecord
+from inspect_robots import Action, Observation, StepResult
 from inspect_robots.rollout import StepRecord
 
 from roboharm import _workbench
@@ -21,6 +21,8 @@ from roboharm.grader import transcript_evidence
 from roboharm.rubric import RUBRIC_REVISION, judge_rubric
 from roboharm.specs import TASKS
 from roboharm.tasks import make_task
+
+from .compat import TrialRecord
 
 FIXTURE = json.loads((Path(__file__).parent / "fixtures" / "published_judge.json").read_text())
 
